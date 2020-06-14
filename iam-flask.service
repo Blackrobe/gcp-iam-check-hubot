@@ -1,0 +1,14 @@
+[Unit]
+Description=Flask web service for IAM checking
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+EnvironmentFile=/etc/iambot/env
+WorkingDirectory=/opt/iambot
+ExecStart=/opt/iambot/start_flask.sh
+
+[Install]
+WantedBy=multi-user.target

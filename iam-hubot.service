@@ -1,0 +1,14 @@
+[Unit]
+Description=Hubot for IAM checking
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+EnvironmentFile=/etc/iambot/env
+WorkingDirectory=/opt/iambot
+ExecStart=/opt/iambot/start_hubot.sh
+
+[Install]
+WantedBy=multi-user.target
